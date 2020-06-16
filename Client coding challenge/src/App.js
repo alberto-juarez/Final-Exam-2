@@ -31,7 +31,7 @@ class App extends React.Component {
     let settings = {
       method: 'POST',
       headers: {
-        //'session-exam-token': 'success-token',
+        'session_exam_token': 'success-token',
         'Content-Type' : 'application/json'
       },
       body: JSON.stringify(newMovie)
@@ -42,7 +42,7 @@ class App extends React.Component {
         })
         .catch((err) => {
           this.setState({
-            error: err
+            error: err.message
           });
         })
   }
@@ -54,7 +54,10 @@ class App extends React.Component {
   componentDidMount(){
     let url= `${this.state.apiURL}movies`;
     let settings = {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'session_exam_token': 'success-token',
+      }
     }
     fetch(url,settings)
         .then((returnedMovies) => {
@@ -68,7 +71,7 @@ class App extends React.Component {
         })
         .catch((err) => {
           this.setState({
-            error: err
+            error: err.message
           });
         })
     /*

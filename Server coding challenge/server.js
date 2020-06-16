@@ -6,12 +6,13 @@ const { DATABASE_URL, PORT } = require( './config' );
 const cors = require( './middleware/cors' );
 const uuid = require('uuid');
 const {Moviedex} = require('./models/moviedex-model');
-const {validateToken} = require('./middleware/token-validation');
+const validateToken = require('./middleware/token-validation');
 
 const app = express();
 
 
 app.use( cors );
+app.use(validateToken);
 
 app.post('/api/add-movie/',jsonParser, (req,res) => {
     let {movie_title, movie_year, movie_rating} = req.body;
