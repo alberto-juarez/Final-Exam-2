@@ -1,0 +1,27 @@
+.container {
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+}
+
+.container-form{
+    text-align: center;
+}
+
+.movie{
+    justify-content: flex-end;
+}
+
+@media all and (max-width:750px){
+    .container {
+        display: flex;
+        flex-flow: column;
+    }
+}
+
+@media all and (max-width:450px){
+    .container {
+        display: flex;
+        flex-flow: column;
+    }
+}
