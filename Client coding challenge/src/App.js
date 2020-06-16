@@ -56,7 +56,7 @@ class App extends React.Component {
     let settings = {
       method: 'GET',
       headers: {
-        'session_exam_token': 'success-token',
+        "session_exam_token": "success-token"
       }
     }
     fetch(url,settings)
